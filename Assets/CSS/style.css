@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+
+.nav a {
+    position: relative;
+    transition: color 0.3s cubic-bezier(.4, 0, .2, 1);
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%) scaleX(0);
+    width: 70%;
+    height: 3px;
+    background: #ffeda5;
+    border-radius: 2px;
+    transition: transform 0.6s cubic-bezier(.4, 0, .2, 1), opacity 0.6s cubic-bezier(.4, 0, .2, 1);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.nav a.active {
+    color: #ffeda5 !important;
+}
+
+.nav a.active::after {
+    transform: translateX(-50%) scaleX(1);
+    opacity: 1;
+}
