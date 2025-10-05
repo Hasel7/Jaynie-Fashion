@@ -91,14 +91,15 @@ const hoodies = [
 hoodies.forEach(item => {
     hoodieProducts.innerHTML += `
         <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col" >
-                    <img src="${item.img}" alt="${item.title}" class="w-full h-56 object-cover">
-                    <div class="p-5 flex-1 flex flex-col justify-between">
-                        <div>
-                            <h3 class="font-bold text-xl mb-2">${item.title}</h3>
-                            <p class="text-gray-600 mb-4">${item.description}</p>
-                        </div>
-                    </div>
-                </div>`
+            <img src="${item.img}" alt="${item.title}" class="w-full h-56 object-cover">
+            <div class="p-5 flex-1 flex flex-col">
+                <div class="flex-1">
+                    <h3 class="font-bold text-xl mb-2">${item.title}</h3>
+                    <p class="text-gray-600 mb-4">${item.description}</p>
+                </div>
+                <a href="#" class="mt-auto bg-[#383b3f] hover:bg-[#ffeda5] hover:text-black font-semibold text-white px-4 py-2 rounded">Add to Cart</a>
+            </div>
+        </div>`
 });
 
 // Shirt Products
@@ -113,7 +114,7 @@ const shirts = [
         ],
         title: "Abstract Orange Shirt",
         description: "Bold, versatile long-sleeve and short-sleeve options for a modern, artistic look. Perfect for any occasion.",
-        isCarousel: true 
+        isCarousel: true
     },
 
     {
@@ -151,6 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <h3 class="font-bold text-xl mb-2">${shirt.title}</h3>
                     <p class="text-gray-600 mb-4">${shirt.description}</p>
                 </div>
+                <a href="#" class="mt-auto bg-[#383b3f] hover:bg-[#ffeda5] hover:text-black font-semibold text-white px-4 py-2 rounded">Add to Cart</a>
             </div>
         `;
 
@@ -200,6 +202,7 @@ if (shirts.length > 0 && shirts[0].isCarousel && Array.isArray(shirts[0].img)) {
                     <h3 class="font-bold text-xl mb-2">${shirts[0].title}</h3>
                     <p class="text-gray-600 mb-4">${shirts[0].description}</p>
                 </div>
+                <a href="#" class="mt-auto bg-[#383b3f] hover:bg-[#ffeda5] hover:text-black font-semibold text-white px-4 py-2 rounded">Add to Cart</a>
             </div>
         </div>`;
 }
@@ -214,98 +217,105 @@ shirts.slice(1).forEach(item => {
                     <h3 class="font-bold text-xl mb-2">${item.title}</h3>
                     <p class="text-gray-600 mb-4">${item.description}</p>
                 </div>
+                <a href="#" class="mt-auto bg-[#383b3f] hover:bg-[#ffeda5] hover:text-black font-semibold text-white px-4 py-2 rounded">Add to Cart</a>
             </div>
         </div>`;
 });
 
- document.addEventListener('DOMContentLoaded', function () {
-            // Helper to activate nav link
-            function activateNavLinkByHash(hash) {
-                const allNavLinks = document.querySelectorAll('.nav a');
-                let found = false;
-                allNavLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === hash) {
-                    link.classList.add('active');
-                    found = true;
-                }
-                });
-                // If not found, activate first nav link
-                if (!found && allNavLinks.length > 0) {
-                allNavLinks[0].classList.add('active');
-                }
-            }
 
-            // Smooth scroll and highlight for all anchor links/buttons
-            function setupSmoothScrollAndHighlight() {
-                // Select all anchor links and buttons that scroll to sections
-                const selector = 'a[href^="#"], button[data-scrollto]';
-                document.querySelectorAll(selector).forEach(el => {
-                el.addEventListener('click', function (e) {
-                    let targetId = null;
-                    if (this.tagName.toLowerCase() === 'a') {
+document.addEventListener('DOMContentLoaded', function () {
+    // Helper to activate nav link
+    function activateNavLinkByHash(hash) {
+        const allNavLinks = document.querySelectorAll('.nav a');
+        let found = false;
+        allNavLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === hash) {
+                link.classList.add('active');
+                found = true;
+            }
+        });
+        // If not found, activate first nav link
+        if (!found && allNavLinks.length > 0) {
+            allNavLinks[0].classList.add('active');
+        }
+    }
+
+    // Smooth scroll and highlight for all anchor links/buttons
+    function setupSmoothScrollAndHighlight() {
+        // Select all anchor links and buttons that scroll to sections
+        const selector = 'a[href^="#"], button[data-scrollto]';
+        document.querySelectorAll(selector).forEach(el => {
+            el.addEventListener('click', function (e) {
+                let targetId = null;
+                if (this.tagName.toLowerCase() === 'a') {
                     const href = this.getAttribute('href');
                     if (href && href.startsWith('#') && href.length > 1) {
                         targetId = href.substring(1);
                     }
-                    } else if (this.dataset.scrollto) {
+                } else if (this.dataset.scrollto) {
                     targetId = this.dataset.scrollto;
-                    }
-                    if (targetId) {
+                }
+                if (targetId) {
                     const targetSection = document.getElementById(targetId);
                     if (targetSection) {
                         e.preventDefault();
                         const headerHeight = document.querySelector('header').offsetHeight || 80;
                         window.scrollTo({
-                        top: targetSection.offsetTop - headerHeight,
-                        behavior: 'smooth'
+                            top: targetSection.offsetTop - headerHeight,
+                            behavior: 'smooth'
                         });
                         history.pushState(null, '', '#' + targetId);
                         activateNavLinkByHash('#' + targetId);
                     }
-                    }
-                });
-                });
-            }
-
-            // Highlight nav link on scroll
-            function highlightOnScroll() {
-                const sections = document.querySelectorAll('section[id]');
-                const allNavLinks = document.querySelectorAll('.nav a');
-                const headerHeight = document.querySelector('header').offsetHeight || 80;
-                let scrollPos = window.scrollY + headerHeight + 10;
-                let currentSection = sections[0];
-                sections.forEach(section => {
-                if (scrollPos >= section.offsetTop) {
-                    currentSection = section;
                 }
-                });
-                allNavLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + currentSection.id) {
-                    link.classList.add('active');
-                }
-                });
-            }
-
-            // On page load, highlight based on hash or default
-            function highlightOnLoad() {
-                activateNavLinkByHash(window.location.hash || '#home-section');
-            }
-
-            // Listen for hashchange (e.g., browser back/forward)
-            window.addEventListener('hashchange', function () {
-                activateNavLinkByHash(window.location.hash);
             });
+        });
+    }
 
-            // Listen for scroll
-            window.addEventListener('scroll', highlightOnScroll);
+    // Highlight nav link on scroll
+    function highlightOnScroll() {
+        const sections = document.querySelectorAll('section[id]');
+        const allNavLinks = document.querySelectorAll('.nav a');
+        const headerHeight = document.querySelector('header').offsetHeight || 80;
+        let scrollPos = window.scrollY + headerHeight + 10;
+        let currentSection = sections[0];
+        sections.forEach(section => {
+            if (scrollPos >= section.offsetTop) {
+                currentSection = section;
+            }
+        });
+        allNavLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + currentSection.id) {
+                link.classList.add('active');
+            }
+        });
+    }
 
-            // Setup everything
-            setupSmoothScrollAndHighlight();
-            highlightOnLoad();
-            });
+    // On page load, highlight based on hash or default
+    function highlightOnLoad() {
+        activateNavLinkByHash(window.location.hash || '#home-section');
+    }
+
+    // Listen for hashchange (e.g., browser back/forward)
+    window.addEventListener('hashchange', function () {
+        activateNavLinkByHash(window.location.hash);
+    });
+
+    // Listen for scroll
+    window.addEventListener('scroll', highlightOnScroll);
+
+    // Setup everything
+    setupSmoothScrollAndHighlight();
+    highlightOnLoad();
+});
+
+
+
+
 
 
 // Footer Year Update
 document.getElementById('current-year').textContent = new Date().getFullYear();
+
