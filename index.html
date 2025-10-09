@@ -14,9 +14,11 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- Animation on scroll (AOS) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="overflow-x-hidden">
     <header class="flex justify-between items-center bg-[#383b3f] px-5 pt-3 fixed top-0 left-0 w-full h-16 z-50">
         <a href="#home-section"><img src="https://i.ibb.co/cKvyJrXW/image.png" alt=""
                 class="h-30 w-auto object-contain">
@@ -47,28 +49,28 @@
         </nav>
     </header>
 
-    <section class="bg-[#383b3f] text-white flex flex-col justify-center items-center gap-5 py-18" id="home-section">
+    <section class="bg-[#383b3f] text-white flex flex-col justify-center items-center gap-5 py-18" id="home-section" >
         <div class="text-center">
-            <h1 class="font-bold text-7xl mb-9">Elevate Your <br> <span class="text-[#ffeda5]">Style</span></h1>
-            <p class="text-2xl">Discover our curated collection of premium clothing that <br> defines elegance and
+            <h1 class="font-bold text-7xl mb-9" data-aos="fade-up" data-aos-duration="1000">Elevate Your <br> <span class="text-[#ffeda5]">Style</span></h1>
+            <p class="text-2xl" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="200">Discover our curated collection of premium clothing that <br> defines elegance and
                 sophistication</p>
         </div>
 
         <div class="flex gap-4">
-            <a href="#collections"><button
+            <a href="#collections" data-aos="fade-right" data-aos-duration="1000"><button
                     class="bg-[#383b3f] font-bold py-2 px-4 rounded hover:bg-[#ffeda5] hover:text-black">Shop
                     Now</button></a>
-            <a href="#about-section"><button
+            <a href="#about-section" data-aos="fade-left" data-aos-duration="1000"><button
                     class="border border-[#ffeda5] text-[#ffcb5b] font-bold py-2 px-4 rounded hover:bg-[#ffeda5] hover:text-[#383b3f] bg-white">Our
                     Story</button></a>
         </div>
     </section>
 
-    <section id="about-section" class="scroll-mt-24">
+    <section id="about-section" class="scroll-mt-24" data-aos="fade-right" data-aos-duration="1200">
         <div>
             <h1 class="font-bold text-6xl mb-9 text-center mt-7">Our Story</h1>
-            <div class="flex flex-col md:flex-row px-4 md:px-20 lg:px-60">
-                <div class="text-gray-600 leading-10 text-[18px] md:text-[20px]">
+            <div class="flex flex-col md:flex-row px-4 md:px-20 lg:px-60" data-aos="fade-left" data-aos-duration="1200">
+                <div class="text-gray-600 leading-10 text-[18px] md:text-[20px]" data-aos="fade-up" data-aos-duration="1200">
                     Founded with a passion for exceptional craftsmanship and timeless
                     design, our brand represents the
                     perfect fusion of contemporary style and classic elegance.
@@ -83,7 +85,7 @@
             </div>
         </div>
 
-        <div class="flex flex-col md:flex-row justify-evenly items-center mt-10 mb-10 gap-6 md:gap-0">
+    <div class="flex flex-col md:flex-row justify-evenly items-center mt-10 mb-10 gap-6 md:gap-0" data-aos="zoom-in" data-aos-duration="1000">
             <div>
                 <h1 class="text-[#ffeda5] font-bold text-3xl">100+</h1>
                 <span>Unique Styles</span>
@@ -100,8 +102,8 @@
     </section>
 
 
-    <section class="scroll-mt-24" id="collections">
-        <div class="text-center mt-7 pt-8">
+    <section class="scroll-mt-24" id="collections" data-aos="fade-up" data-aos-duration="1000">
+    <div class="text-center mt-7 pt-8" data-aos="fade-down" data-aos-duration="1000">
             <h1 class="font-bold text-4xl sm:text-5xl md:text-6xl">Our Collections</h1>
             <p class="text-gray-600 mt-3 text-base sm:text-lg md:text-xl lg:text-2xl">
                 Discover our carefully curated collections, each designed to
@@ -110,9 +112,9 @@
             </p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 px-4 py-10 max-w-4xl mx-auto">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 px-4 py-10 max-w-4xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
             <!-- Hoodies -->
-            <div class="bg-white shadow-md rounded-lg overflow-hidden flex flex-col min-h-[400px]">
+            <div class="bg-white shadow-md rounded-lg overflow-hidden flex flex-col min-h-[400px]" data-aos="zoom-in" data-aos-duration="1000">
                 <img src="https://i.ibb.co/zT035r4J/image.png" alt="Collection 1" class="w-full h-64 object-cover">
                 <div class="p-4 flex-1 flex flex-col justify-between">
                     <div>
@@ -126,7 +128,7 @@
                 </div>
             </div>
             <!-- Shirts -->
-            <div class="bg-white shadow-md rounded-lg overflow-hidden flex flex-col min-h-[400px]">
+            <div class="bg-white shadow-md rounded-lg overflow-hidden flex flex-col min-h-[400px]" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
                 <img src="https://i.ibb.co/mV2YKBRp/Gemini-Generated-Image-ns4cg9ns4cg9ns4c.png" alt="Collection 2"
                     class="w-full h-64 object-cover">
                 <div class="p-4 flex-1 flex flex-col justify-between">
@@ -144,23 +146,23 @@
 
 
         <!-- See More Products Section -->
-        <section class="max-w-6xl mx-auto px-4 py-16">
+    <section class="max-w-6xl mx-auto px-4 py-16" data-aos="fade-up" data-aos-duration="1000">
 
             <!-- Hoodie Collection -->
-            <h2 class="text-4xl font-bold text-center mb-8 text-[#383b3f]">Hoodie Collection</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 scroll-mt-36" id="hoodie-products">
+            <h2 class="text-4xl font-bold text-center mb-8 text-[#383b3f]" data-aos="fade-right" data-aos-duration="1000">Hoodie Collection</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 scroll-mt-36" id="hoodie-products" data-aos="fade-up" data-aos-duration="1000">
                 <!-- See More forEach Product -->
             </div>
 
             <!-- Shirts Collection -->
-            <h2 class="text-4xl font-bold text-center mb-8 mt-7 text-[#383b3f]">Shirts Collection</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 scroll-mt-36" id="shirt-products">
+            <h2 class="text-4xl font-bold text-center mb-8 mt-7 text-[#383b3f]" data-aos="fade-left" data-aos-duration="1000">Shirts Collection</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 scroll-mt-36" id="shirt-products" data-aos="fade-up" data-aos-duration="1000">
                 <!-- See More forEach Product -->
             </div>
         </section>
 
 
-        <div class="text-center mt-7 pt-8">
+    <div class="text-center mt-7 pt-8" data-aos="fade-down" data-aos-duration="1000">
             <h1 class="font-bold text-6xl">More Coming Soon...</h1>
             <p class="text-gray-600 mt-3 text-[20px]">Stay tuned for exciting new arrivals and exclusive collections
                 that will elevate your style to new heights.
@@ -170,28 +172,33 @@
 
 
     <!-- Contact Section -->
-    <section id="contact" class="bg-[#383b3f] text-white text-center py-12 pt-16 mt-10 scroll-mt-14">
+    <section id="contact" class="bg-[#383b3f] text-white text-center py-12 pt-16 mt-10 scroll-mt-14" data-aos="zoom-in" data-aos-duration="1000">
         <h2 class="text-4xl font-bold mb-4">Get in Touch</h2>
         <p class="mb-8 text-lg">Have questions or need assistance? We're here to help!</p>
-        <form class="max-w-md mx-auto">
+        <form class="max-w-md mx-auto" action="https://formspree.io/f/manpbokg" method="POST">
             <input type="text" required placeholder="Your Name"
-                class="w-full p-3 mb-4 rounded bg-white text-black focus:outline-none focus:ring-2 focus:ring-[#ffeda5]">
+                class="w-full p-3 mb-4 rounded bg-white text-black focus:outline-none focus:ring-2 focus:ring-[#ffeda5]" name="name">
             <input type="email" required placeholder="Your Email"
-                class="w-full p-3 mb-4 rounded bg-white text-black focus:outline-none focus:ring-2 focus:ring-[#ffeda5]">
+                class="w-full p-3 mb-4 rounded bg-white text-black focus:outline-none focus:ring-2 focus:ring-[#ffeda5]" name="email">
             <textarea required placeholder="Your Message" rows="4"
-                class="w-full p-3 mb-4 rounded bg-white text-black focus:outline-none focus:ring-2 focus:ring-[#ffeda5]"></textarea>
+                class="w-full p-3 mb-4 rounded bg-white text-black focus:outline-none focus:ring-2 focus:ring-[#ffeda5]" name="message"></textarea>
             <button type="submit"
                 class="bg-[#ffeda5] text-black font-bold py-2 px-4 rounded hover:bg-white hover:text-[#383b3f] transition-colors w-full md:w-auto">Send
                 Message</button>
         </form>
+    </section>
 
-        <footer>
-            <p class="mt-8 text-sm text-gray-400">&copy; <span id="current-year"></span> Jaynie Fashion. All rights
-                reserved.</p>
-        </footer>
+    <footer>
+        <p class="mt-8 text-sm text-gray-400">&copy; <span id="current-year"></span> Jaynie Fashion. All rights
+            reserved.</p>
+    </footer>
 
 
-        <script src="Assets/JS/script.js" defer></script>
+    <script src="Assets/JS/script.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
