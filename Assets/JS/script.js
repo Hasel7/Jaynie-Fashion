@@ -85,6 +85,12 @@ const hoodies = [
         img: "https://i.ibb.co/chTYG3bW/image.png",
         title: "Sky Blue & Black Set",
         description: "Sleek color-block design. Comfortable fabric and a polished, modern athletic look."
+    },
+
+    {
+        img: "https://i.ibb.co/JbphGyL/image.png",
+        title: "Black-White Split Set",
+        description: "Comfort meets style in a standout, color-blocked fleece set. Perfect for a bold, casual look."
     }
 ]
 
